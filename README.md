@@ -4,9 +4,9 @@
 
 main.as 中
 
-BOOMPERCENTAGE: Number = 0.2;		// 地雷密度
-HEIGHT: Number = 14;				// 游戏竖直方向格子数
-WIDTH: Number = 11;					// 游戏水平方向格子数
+BOOMPERCENTAGE: Number = 0.2;		// 地雷密度  
+HEIGHT: Number = 14;				// 游戏竖直方向格子数  
+WIDTH: Number = 11;					// 游戏水平方向格子数  
 
 ## 使用方法
 
