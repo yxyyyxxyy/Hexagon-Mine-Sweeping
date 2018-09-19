@@ -22,6 +22,8 @@
 						flag += int(a[ii][jj].BB);
 					}
 				}
+				if (j - 2 >= 0 && a[i][j - 2].BB == true) flag++;
+				if (j + 2 < HEIGHT && a[i][j + 2].BB == true) flag++;
 				if (!flag) {
 					a[i][j].ok();
 					for (ii = i - 1; ii <= i + 1; ii++) {
@@ -45,8 +47,7 @@
 				for (i = 0; i < WIDTH; i++) {
 					for (j = 0; j < HEIGHT; j++) {
 						if (a[i][j].name == evt.currentTarget.name) {
-							var nn: int;
-							nn = 0;
+							var nn: int = 0;
 							for (var ii = i - 1; ii <= i + 1; ii++) {
 								for (var jj = j - 1; jj <= j + 1; jj++) {
 									if (ii >= 0 && ii < WIDTH) {
@@ -56,6 +57,8 @@
 									}
 								}
 							}
+							if (j - 2 >= 0 && a[i][j - 2].BB == true) nn++;
+							if (j + 2 < HEIGHT && a[i][j + 2].BB == true) nn++;
 							if (nn != 0) a[i][j].become(nn);
 							else {
 								check(i, j);
