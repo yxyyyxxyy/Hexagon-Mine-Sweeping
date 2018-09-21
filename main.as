@@ -71,6 +71,7 @@
 		}
 
 		public function main() {
+			thegame.start();
 			setInterval(function (): void {
 				var flllg: Boolean = true;
 				for (var i: int = 0; i < WIDTH; i++)
