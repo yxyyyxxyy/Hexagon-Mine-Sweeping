@@ -1,6 +1,7 @@
 ﻿package {
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
+	import flash.display.DisplayObjectContainer;
 
 	public class square extends MovieClip {
 
@@ -16,6 +17,17 @@
 
 		public function square() {
 			stop();
+		}
+
+		public function resetSquare() {
+			gotoAndStop(1);
+			clear = false;
+			this.removeEventListener(MouseEvent.MOUSE_WHEEL, (parent as MovieClip).onWheel);
+			this.removeEventListener(MouseEvent.CLICK, (parent as MovieClip).onClick);
+			this.addEventListener(MouseEvent.MOUSE_WHEEL, (parent as MovieClip).onWheel);
+			this.addEventListener(MouseEvent.CLICK, (parent as MovieClip).onClick);
+
+
 		}
 
 		public function boom(): void {

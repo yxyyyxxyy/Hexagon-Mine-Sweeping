@@ -70,6 +70,20 @@
 			}
 		}
 
+		public function restart(evt: MouseEvent) {
+			evt.currentTarget.visible = false;
+			trace(evt.currentTarget.name);
+			for (var i: int = 0; i < WIDTH; i++) {
+				for (var j: int = 0; j < HEIGHT; j++) {
+					if (Math.random() < BOOMPERCENTAGE && (i + j) % 2 == 0) a[i][j].BB = true;
+					else a[i][j].BB = false;
+					a[i][j].resetSquare();
+				}
+			}
+
+			thegame.start();
+		}
+
 		public function main() {
 			thegame.start();
 			setInterval(function (): void {
